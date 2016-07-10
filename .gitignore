@@ -1,0 +1,19 @@
+# log by rob
+*.log
+
+# by rob to LIAM - managed with a seperated repository in github
+EduMS/
+phpSecureLogin/
+SQMS/
+EduMS_api/
+EduMS-client/
+BPMspaceUG.github.io.wiki/
+BPMspaceUG.github.io/
+private/
+mITSM-partner-network/
+scriptcase/
+partner/
+IPMS/
+
+# DONT upload passwords
+DB_config/login_credentials_DB_*
