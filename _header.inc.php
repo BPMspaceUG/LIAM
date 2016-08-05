@@ -36,7 +36,7 @@
 			
 			
 			<?php if ($logged == 'in') {
-			echo "<div style=\"margin-top: -48px; margin-right: 0px; margin-bottom: 10px;\">";
+			echo "<div style=\"margin-top: -48px; margin-right: 0px; margin-bottom: 20px;\">";
 			include_once '_header_LIAM.inc.php';}
 			echo "</div>"; 
 			?>

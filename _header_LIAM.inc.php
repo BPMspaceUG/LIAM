@@ -41,23 +41,35 @@ $filepath_ipms 	= $filepath_liam."/IPMS";
 
 if (!empty($_GET) && !empty($_GET["debug"]) && ($_GET["debug"] == 'on' )) {
 
-if ($url == $url_liam) {echo "<div style=\"color: #ffffff;>\"";} else {echo "<div>";};
-
-echo "</br></br><table><tbody><tr>";
+echo "<div class=\"container text-right\">";
+echo "<a href='#' class=\"btn collapsed row text-right\" data-toggle=\"collapse\" data-target=\"#debug\"><i class=\"fa fa-caret-square-o-down\"></i></a></div>";
+echo "<div style=\"background-color: #ffffff;\">";
+echo "<div class=\"row collapse in\" id=\"debug\">";
+echo "</br></br><table class=\"table\" ><tbody><tr>";
 echo "<td> \$filepath</td><td>";
+if (file_exists($filepath)) {echo "INSTALLED ";} else {echo "NOT INSTALLED ";}
+echo "</td><td>";
 var_dump($filepath);
 echo "</td><tr><td> \$filepath_liam</td><td>";
+if (file_exists($filepath_liam)) {echo "INSTALLED ";} else {echo "NOT INSTALLED ";}
+echo "</td><td>";
 var_dump($filepath_liam);
 echo "</td><tr><td> \$filepath_sqms</td><td>";
+if (file_exists($filepath_sqms)) {echo "INSTALLED ";} else {echo "NOT INSTALLED ";}
+echo "</td><td>";
 var_dump($filepath_sqms);
 echo "</td><tr><td> \$filepath_edums</td><td>";
+if (file_exists($filepath_edums)) {echo "INSTALLED ";} else {echo "NOT INSTALLED ";}
+echo "</td><td>";
 var_dump($filepath_edums);
 echo "</td><tr><td> \$filepath_ipms</td><td>";
+if (file_exists($filepath_ipms	)) {echo "INSTALLED ";} else {echo "NOT INSTALLED ";}
+echo "</td><td>";
 var_dump($filepath_ipms);
 echo "</tr></tbody></table>";
 echo "</br></br>";
 
-echo "<table><tbody><tr>";
+echo "<table class=\"table\"><tbody><tr>";
 echo "<td>\$url</td><td>";
 var_dump(parse_url($url));
 echo "</td><tr><td> \$url_liam</td><td>";
@@ -71,9 +83,60 @@ var_dump(parse_url($url_ipms));
 echo "</tr></tbody></table>";
 echo "</br></br>";
 
-print_r($_SERVER);
 
-echo "</div>";
+$indicesServer = array('PHP_SELF',
+'argv',
+'argc',
+'GATEWAY_INTERFACE',
+'SERVER_ADDR',
+'SERVER_NAME',
+'SERVER_SOFTWARE',
+'SERVER_PROTOCOL',
+'REQUEST_METHOD',
+'REQUEST_TIME',
+'REQUEST_TIME_FLOAT',
+'QUERY_STRING',
+'DOCUMENT_ROOT',
+'HTTP_ACCEPT',
+'HTTP_ACCEPT_CHARSET',
+'HTTP_ACCEPT_ENCODING',
+'HTTP_ACCEPT_LANGUAGE',
+'HTTP_CONNECTION',
+'HTTP_HOST',
+'HTTP_REFERER',
+'HTTP_USER_AGENT',
+'HTTPS',
+'REMOTE_ADDR',
+'REMOTE_HOST',
+'REMOTE_PORT',
+'REMOTE_USER',
+'REDIRECT_REMOTE_USER',
+'SCRIPT_FILENAME',
+'SERVER_ADMIN',
+'SERVER_PORT',
+'SERVER_SIGNATURE',
+'PATH_TRANSLATED',
+'SCRIPT_NAME',
+'REQUEST_URI',
+'PHP_AUTH_DIGEST',
+'PHP_AUTH_USER',
+'PHP_AUTH_PW',
+'AUTH_TYPE',
+'PATH_INFO',
+'ORIG_PATH_INFO') ;
+
+echo "<table class=\"table\"><tbody>" ;
+foreach ($indicesServer as $arg) {
+    if (isset($_SERVER[$arg])) {
+        echo '<tr><td>'.$arg.'</td><td>' . $_SERVER[$arg] . '</td></tr>' ;
+    }
+    else {
+        echo '<tr><td>'.$arg.'</td><td>-</td></tr>' ;
+    }
+}
+echo "</tbody></table>" ; 
+
+echo "</div></div>";
 }
 ?>
 
