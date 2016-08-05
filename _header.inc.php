@@ -29,13 +29,18 @@
 ?>
 	<div class="container" style="background-color:#003296;">
 		<div class="row" >
-			<div class="col-md-8" >
+			<div class="col-md-12" >
 				<img style="margin-left: -14px;" src="images/BPMspace_logo_small.png" class="img-responsive"
 					alt="BPMspace Development" /> 
-			</div>
-			<div class="col-md-4" style="margin-top: 8px; margin-right: 0px;">
+					
 			
-			<?php include_once '_header_LIAM.inc.php'; ?>
+			
+			<?php if ($logged == 'in') {
+			echo "<div style=\"margin-top: -48px; margin-right: 0px; margin-bottom: 10px;\">";
+			include_once '_header_LIAM.inc.php';}
+			echo "</div>"; 
+			?>
+			
 			
 			</div>
 		</div>

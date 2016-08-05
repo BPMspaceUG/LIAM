@@ -1,25 +1,81 @@
-<!---- http://stackoverflow.com/questions/15868605/viewing-changes-with-wamp-and-chrome-issue ---> 
 <?php
-header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
-header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-?>
+// Is the user using HTTPS?
+$url_scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
+// Host, Port, Path and Filename
+$url_server_name = $_SERVER['SERVER_NAME'];
+$url_server_port = $_SERVER['SERVER_PORT'];
+$url_server_path = dirname($_SERVER['PHP_SELF'])."/";
+$url_server_filename = str_replace($url_server_path ,"",$_SERVER['PHP_SELF']);
+// Complete the URL
+$url =$url_scheme . "://".$url_server_name . ":" . $url_server_port . $url_server_path;
+
+$subdir = array("IPMS/", "SQMS/", "EduMS/");
+$url_liam = str_replace($subdir,"",$url);
+$url_sqms = $url_liam."SQMS";
+$url_edums = $url_liam."EduMS";
+$url_ipms = $url_liam."IPMS";
+
+$filepath	   	= dirname($_SERVER['SCRIPT_FILENAME'])."/";
+$filepath_liam 	= str_replace($subdir,"",$filepath);
+$filepath_sqms 	= $filepath_liam."/SQMS";
+$filepath_edums = $filepath_liam."/EduMS";
+$filepath_ipms 	= $filepath_liam."/IPMS";
+?>		
 
 <div class="container ">
 	<div class="row pull-right">
 				
 		<?php if ($logged == 'in') {
 			# Button ADMIN only avaiable when define logged in user has role "admin"--->
+			
 			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#Admin_Modal">Admin</button>';
 			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#MyProfile_Modal">My Profile</button>';
-			echo '<a href="phpSecureLogin/includes/logout.php" title="Logout" class="btn btn-large btn-success-outline"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>';
+			echo '<a href="' . $url_liam . 'phpSecureLogin/includes/logout.php" title="Logout" class="btn btn-large btn-success-outline"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>';
 		} ?>
 			
 	</div>
 </div>
 
+<?php 
+
+
+if (!empty($_GET) && !empty($_GET["debug"]) && ($_GET["debug"] == 'on' )) {
+
+if ($url == $url_liam) {echo "<div style=\"color: #ffffff;>\"";} else {echo "<div>";};
+
+echo "</br></br><table><tbody><tr>";
+echo "<td> \$filepath</td><td>";
+var_dump($filepath);
+echo "</td><tr><td> \$filepath_liam</td><td>";
+var_dump($filepath_liam);
+echo "</td><tr><td> \$filepath_sqms</td><td>";
+var_dump($filepath_sqms);
+echo "</td><tr><td> \$filepath_edums</td><td>";
+var_dump($filepath_edums);
+echo "</td><tr><td> \$filepath_ipms</td><td>";
+var_dump($filepath_ipms);
+echo "</tr></tbody></table>";
+echo "</br></br>";
+
+echo "<table><tbody><tr>";
+echo "<td>\$url</td><td>";
+var_dump(parse_url($url));
+echo "</td><tr><td> \$url_liam</td><td>";
+var_dump(parse_url($url_liam));
+echo "</td><tr><td> \$url_sqms</td><td>";
+var_dump(parse_url($url_sqms));
+echo "</td><tr><td> \$url_edums;</td><td>";
+var_dump(parse_url($url_edums));
+echo "</td><tr><td> \$url_ipms</td><td>";
+var_dump(parse_url($url_ipms));
+echo "</tr></tbody></table>";
+echo "</br></br>";
+
+print_r($_SERVER);
+
+echo "</div>";
+}
+?>
 
 <!-- Modal -->
 

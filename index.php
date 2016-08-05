@@ -1,5 +1,6 @@
 <?php
 	include_once '_header.inc.php';
+	//print_r($_SERVER);
 ?>
 </br>
 <?php
