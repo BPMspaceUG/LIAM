@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" media="screen">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="custom/custom.css">
+
+<style>
+#liam-header { margin-top: 5px; float: right;}
+
+</style>
 <!----- js scripts are loaded in the footer -------------------->
 </head>
 <body>
@@ -27,21 +32,15 @@
 		$logged = 'out';
 	}
 ?>
-	<div class="container" style="background-color:#003296;">
-		<div class="row" >
-			<div class="col-md-12" >
-				<img style="margin-left: -14px;" src="images/BPMspace_logo_small.png" class="img-responsive"
-					alt="BPMspace Development" /> 
-					
-			
-			
-			<?php if ($logged == 'in') {
-			echo "<div style=\"margin-top: -48px; margin-right: 0px; margin-bottom: 20px;\">";
-			include_once '_header_LIAM.inc.php';}
-			echo "</div>"; 
-			?>
-			
-			
+	<div class="container">
+		<div class="row" style="background-color:#003296;" >
+			<div class="col-md-7">
+				<img style="margin-left: -14px;" src="images/BPMspace_logo_small.png" class="img-responsive" alt="BPMspace Development" /> 
+			</div>		
+			<div class="col-md-5 text-right" id="liam-header">
+				<?php if ($logged == 'in') {
+				include_once '_header_LIAM.inc.php';}
+				?>			
 			</div>
 		</div>
 	</div>		

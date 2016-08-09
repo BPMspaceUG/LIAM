@@ -9,7 +9,7 @@ $url_server_filename = str_replace($url_server_path ,"",$_SERVER['PHP_SELF']);
 // Complete the URL
 $url =$url_scheme . "://".$url_server_name . ":" . $url_server_port . $url_server_path;
 
-$subdir = array("IPMS/", "SQMS/", "EduMS/");
+$subdir = array("IPMS/", "SQMS/", "EduMS/", "partner/");
 $url_liam = str_replace($subdir,"",$url);
 $url_sqms = $url_liam."SQMS";
 $url_edums = $url_liam."EduMS";
@@ -22,19 +22,13 @@ $filepath_edums = $filepath_liam."/EduMS";
 $filepath_ipms 	= $filepath_liam."/IPMS";
 ?>		
 
-<div class="container ">
-	<div class="row pull-right">
-				
-		<?php if ($logged == 'in') {
+<?php if ($logged == 'in') {
 			# Button ADMIN only avaiable when define logged in user has role "admin"--->
 			
 			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#Admin_Modal">Admin</button>';
 			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#MyProfile_Modal">My Profile</button>';
 			echo '<a href="' . $url_liam . 'phpSecureLogin/includes/logout.php" title="Logout" class="btn btn-large btn-success-outline"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>';
 		} ?>
-			
-	</div>
-</div>
 
 <?php 
 
