@@ -14,6 +14,8 @@ mITSM-partner-network/
 scriptcase/
 partner/
 IPMS/
+BPMspace_test/
+HEMS/
 
 # DONT upload passwords
 DB_config/login_credentials_DB_*
