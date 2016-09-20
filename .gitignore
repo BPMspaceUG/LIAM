@@ -15,7 +15,7 @@ scriptcase/
 partner/
 IPMS/
 IPMS_test/
-
-
+BPMspace_test/
+HEMS/
 # DONT upload passwords
 DB_config/login_credentials_DB_*
