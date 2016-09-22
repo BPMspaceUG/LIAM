@@ -9,25 +9,28 @@ $url_server_filename = str_replace($url_server_path ,"",$_SERVER['PHP_SELF']);
 // Complete the URL
 $url =$url_scheme . "://".$url_server_name . ":" . $url_server_port . $url_server_path;
 
-$subdir = array("IPMS/", "SQMS/", "EduMS/", "partner/");
+$subdir = array("IPMS/", "SQMS/", "EduMS/", "partner/","HEMS");
 $url_liam = str_replace($subdir,"",$url);
 $url_sqms = $url_liam."SQMS";
 $url_edums = $url_liam."EduMS";
 $url_ipms = $url_liam."IPMS";
+$url_hems = $url_liam."HEMS";
+
 
 $filepath	   	= dirname($_SERVER['SCRIPT_FILENAME'])."/";
 $filepath_liam 	= str_replace($subdir,"",$filepath);
 $filepath_sqms 	= $filepath_liam."/SQMS";
 $filepath_edums = $filepath_liam."/EduMS";
 $filepath_ipms 	= $filepath_liam."/IPMS";
+$filepath_hems 	= $filepath_liam."/HEMS";
 ?>		
 
 <?php if ($logged == 'in') {
 			# Button ADMIN only avaiable when define logged in user has role "admin"--->
 			
-			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#Admin_Modal">Admin</button>';
-			echo '<button type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#MyProfile_Modal">My Profile</button>';
-			echo '<a href="' . $url_liam . 'phpSecureLogin/includes/logout.php" title="Logout" class="btn btn-large btn-success-outline"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>';
+			echo '<a class="btn btn-large btn-default" title="Admin" href="'.$url_liam.'register.php">Admin</a>&nbsp';
+			echo '<button type="button" class="btn btn-large btn-default" data-toggle="modal" data-target="#MyProfile_Modal">My Profile</button>&nbsp';
+			echo '<a class="btn btn-large btn-default" title="Logout" href="' . $url_liam . 'phpSecureLogin/includes/logout.php"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>&nbsp';
 		} ?>
 
 <?php 

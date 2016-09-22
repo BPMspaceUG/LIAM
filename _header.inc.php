@@ -4,10 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BPMspace LIAM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- TODO: Scripts local -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" media="screen">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="custom/custom.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/liam.css">
 
 <style>
 #liam-header { margin-top: 5px; float: right;}
@@ -27,6 +26,10 @@
 			$logged = 'in';
 		} else {
 			$logged = 'out';
+			//var_dump (basename($_SERVER['PHP_SELF']));
+			if((basename($_SERVER['PHP_SELF'])) != 'index.php' ) {
+				header("Location: ./index.php?error_messages='You are not logged in!'");
+			}
 		}
 	} else {
 		$logged = 'out';
@@ -35,11 +38,11 @@
 	<div class="container">
 		<div class="row" style="background-color:#003296;" >
 			<div class="col-md-7">
-				<img style="margin-left: -14px;" src="images/BPMspace_logo_small.png" class="img-responsive" alt="BPMspace Development" /> 
+				<a href="./index.php"> <img style="margin-left: -14px;" src="images/BPMspace_logo_small.png" class="img-responsive" alt="BPMspace Development" /> </a>
 			</div>		
 			<div class="col-md-5 text-right" id="liam-header">
-				<?php if ($logged == 'in') {
-				include_once '_header_LIAM.inc.php';}
+				<?php
+				include_once '_header_LIAM.inc.php';
 				?>			
 			</div>
 		</div>
