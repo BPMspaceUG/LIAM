@@ -25,7 +25,7 @@ $filepath_ipms 	= $filepath_liam."/IPMS";
 $filepath_hems 	= $filepath_liam."/HEMS";
 ?>		
 
-<?php if ($logged == 'in') {
+<?php if (isset($logged) && $logged == 'in') {
 			# Button ADMIN only avaiable when define logged in user has role "admin"--->
 			
 			echo '<a class="btn btn-large btn-default" title="Admin" href="'.$url_liam.'register.php">Admin</a>&nbsp';
