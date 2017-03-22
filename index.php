@@ -133,6 +133,23 @@
 			} 			
 			?>
 		</div>
+		<div class="col-md-4">
+			<a href="REPLACER/"><img src="images/bpmspace_icon-REPLACER-left-200px-text.png"
+				class="img-responsive img-thumbnail center-block"
+				alt="Multilingual Replacer Application" width="304" height="236"></a>
+		</div>
+		<div class="col-md-2" style="margin-top: 30px">
+
+			<?php
+			$content = "";
+			$content = @file_get_contents("REPLACER/.git/config");
+			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/REPLACER.git")){
+				echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
+			} else {
+				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
+			} 			
+			?>
+		</div>
 	</div>
 </div>
 </br></br>
