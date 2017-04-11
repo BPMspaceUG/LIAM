@@ -45,17 +45,17 @@
 			?>
 		</div>
 		<div class="col-md-4">
-			<a href="#"><img src="images/bpmspace_icon-LDMS-left-200px-text.png"
+			<a href="COMS/"><img src="images/bpmspace_icon-COMS-left-200px-text.png"
 				class="img-responsive img-thumbnail center-block"
-				alt="Lightweight Document Management System" width="304"
+				alt="Certification Organization Management System" width="304"
 				height="236"></a>
 		</div>
 		<div class="col-md-2" style="margin-top: 30px">
 
 			<?php
 			$content = "";
-			$content = @file_get_contents("LDMS/.git/config");
-			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/LDMS.git")){
+			$content = @file_get_contents("COMS/.git/config");
+			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/COMS.git")){
 					echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
 			} else {
 				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
@@ -145,6 +145,24 @@
 			$content = @file_get_contents("REPLACER/.git/config");
 			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/REPLACER.git")){
 				echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
+			} else {
+				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
+			} 			
+			?>
+		</div>
+		<div class="col-md-4">
+			<a href="#"><img src="images/bpmspace_icon-LDMS-left-200px-text.png"
+				class="img-responsive img-thumbnail center-block"
+				alt="Lightweight Document Management System" width="304"
+				height="236"></a>
+		</div>
+		<div class="col-md-2" style="margin-top: 30px">
+
+			<?php
+			$content = "";
+			$content = @file_get_contents("LDMS/.git/config");
+			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/LDMS.git")){
+					echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
 			} else {
 				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
 			} 			
