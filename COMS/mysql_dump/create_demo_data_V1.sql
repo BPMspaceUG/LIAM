@@ -30,6 +30,7 @@ call demo_data();
 UPDATE `coms_participant_identifier` set `coms_participant_matriculation` = concat(`coms_participant_id`,SUBSTRING(CONV(SUBSTRING(coms_participant_md5,1,5),16,10),1,3)) where true;
 UPDATE `coms_participant_identifier` set `coms_participant_base32` = LPAD(CONV(`coms_participant_matriculation`,10,32),8,'0') where true;
 
-
+-- no gender
+-- no e-mai
 
 SELECT coms_participant_base32, count(coms_participant_identifier_id) AS cnt FROM bpmspace_coms_v1.coms_participant_identifier GROUP BY coms_participant_base32 Having cnt > 1;
