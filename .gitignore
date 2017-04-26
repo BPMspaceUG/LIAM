@@ -20,5 +20,7 @@ HEMS/
 backup/
 oldversion/
 REPLACER/
+ASMS/
+COMS/
 # DONT upload passwords
 DB_config/login_credentials_DB_*
