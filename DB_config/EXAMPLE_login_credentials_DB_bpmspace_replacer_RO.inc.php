@@ -1,6 +1,6 @@
 <?php
       $config['db'] =  array(
-        'host' => "localhost:3306",
+        'host' => "localhost",
         'user' => "bpmspace_repl_RO",
         'password' => "",
         'database' => "bpmspace_replacer_v1"
