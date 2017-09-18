@@ -22,5 +22,6 @@ oldversion/
 REPLACER/
 ASMS/
 COMS/
+/reporter/PHPMailReporter
 # DONT upload passwords
 DB_config/login_credentials_DB_*
