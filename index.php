@@ -82,17 +82,17 @@
 			?>
 		</div>
 		<div class="col-md-4">
-			<a href="#"><img src="images/bpmspace_icon-SCMS-left-200px-text.png"
+			<a href="#"><img src="images/bpmspace_icon-TEMS-left-200px-text.png"
 				class="img-responsive img-thumbnail center-block"
-				alt="Simple Configuration Management System" width="304"
+				alt="Test & Exam Management System" width="304"
 				height="236"></a>
 		</div>
 		<div class="col-md-2" style="margin-top: 30px">
 
 			<?php
 			$content = "";
-			$content = @file_get_contents("SCMS/.git/config");
-			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/SCMS.git")){
+			$content = @file_get_contents("TEMS/.git/config");
+			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/TEMS.git")){
 					echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
 			} else {
 				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
@@ -182,6 +182,24 @@
 			$content = "";
 			$content = @file_get_contents("ASMS/.git/config");
 			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/ASMS.git")){
+					echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
+			} else {
+				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";
+			} 			
+			?>
+		</div>
+		<div class="col-md-4">
+			<a href="#"><img src="images/bpmspace_icon-SCMS-left-200px-text.png"
+				class="img-responsive img-thumbnail center-block"
+				alt="Simple Configuration Management System" width="304"
+				height="236"></a>
+		</div>
+		<div class="col-md-2" style="margin-top: 30px">
+
+			<?php
+			$content = "";
+			$content = @file_get_contents("SCMS/.git/config");
+			if (!empty($content) && strpos($content,"https://github.com/BPMspaceUG/SCMS.git")){
 					echo "<i class=\"fa fa-check fa-2x  text-success\" aria-hidden=\"true\"></i>";
 			} else {
 				echo "<i class=\"fa fa-ban fa-2x text-danger\"></i>";

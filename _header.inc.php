@@ -1,3 +1,7 @@
+<?php
+	include_once '_path_url.inc.php';
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,7 +32,7 @@
 			$logged = 'out';
 			//var_dump (basename($_SERVER['PHP_SELF']));
 			if((basename($_SERVER['PHP_SELF'])) != 'index.php' ) {
-				header("Location: ./index.php?error_messages='You are not logged in!'");
+				header("Location: index.php?error_messages='You are not logged in!'");
 			}
 		}
 	} else {
