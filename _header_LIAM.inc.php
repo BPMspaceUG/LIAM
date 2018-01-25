@@ -2,14 +2,17 @@
 	include_once '_path_url.inc.php';
 ?>
 
-<?php if (isset($logged) && $logged == 'in') {
+<?php
+	if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+		
+if (isset($logged) && $logged == 'in') {
 			# Button ADMIN only avaiable when define logged in user has role "admin"--->
 			echo '<a class="btn btn-large btn-default" title="Admin" href="'.$url_liam.'register.php">Admin</a>&nbsp';
 			echo '<button type="button" class="btn btn-large btn-default" data-toggle="modal" data-target="#MyProfile_Modal">My Profile</button>&nbsp';
 			echo '<a class="btn btn-large btn-default" title="Logout" href="' . $url_liam . 'phpSecureLogin/includes/logout.php"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>&nbsp';
-		} ?>
+		} 
 
-
+echo '
 
 <!-- Modal -->
 
@@ -186,5 +189,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-
+</div>';
+}
+?>

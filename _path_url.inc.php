@@ -36,15 +36,16 @@ $filepath_asms 	= $filepath_liam."/ASMS";
 $filepath_tems 	= $filepath_liam."/TEMS";
 ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
+
 <?php 
 
 
 if (!empty($_GET) && !empty($_GET["debug"]) && ($_GET["debug"] == 'on' )) {
 
+echo '<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">';
 echo "<div class=\"container text-right\">";
 echo "<a href='#' class=\"btn collapsed row text-right\" data-toggle=\"collapse\" data-target=\"#debug\"><i class=\"fa fa-caret-square-o-down\"></i></a></div>";
 echo "<div style=\"background-color: #ffffff;\">";
@@ -183,8 +184,8 @@ foreach ($indicesServer as $arg) {
 echo "</tbody></table>" ; 
 
 echo "</div></div>";
+echo '  </div>
+    <div class="col-lg-1"></div>
+  </div>';
 }
 ?>
-  </div>
-    <div class="col-lg-1"></div>
-  </div>
