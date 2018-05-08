@@ -26,3 +26,4 @@ TEMS/
 /reporter/PHPMailReporter
 # DONT upload passwords
 DB_config/login_credentials_DB_*
+DB_config/login_credentials_API_*
