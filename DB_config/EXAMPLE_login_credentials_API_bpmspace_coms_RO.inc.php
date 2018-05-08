@@ -1,3 +1,4 @@
+<?php
 $api = new PHP_CRUD_API(array(
 	'dbengine'=>'MySQL',
 	'hostname'=>'localhost',
@@ -7,3 +8,4 @@ $api = new PHP_CRUD_API(array(
 	'charset'=>'utf8mb4'
 ));
 $api->executeCommand();
+?>
