@@ -1,4 +1,10 @@
 <?php
+/****************************
+Set your $url_liam and $filepath_liam
+*********************************/
+
+
+
 // Is the user using HTTPS?
 $url_scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
 // Host, Port, Path and Filename
@@ -10,7 +16,7 @@ $url_server_filename = str_replace($url_server_path ,"",$_SERVER['PHP_SELF']);
 $url =$url_scheme . "://".$url_server_name . ":" . $url_server_port . $url_server_path;
 
 $subdir = array("IPMS/", "SQMS/", "EduMS/", "HEMS/" , "COMS/" , "REPLACER/" , "SCMS/" , "LDMS/", "ASMS/", "TEMS/");
-$url_liam = "/~amade/";
+$url_liam = "fill_in_LIAM_base_URL_here";
 $url_ipms = $url_liam."IPMS";
 $url_sqms = $url_liam."SQMS";
 $url_edums = $url_liam."EduMS";
@@ -23,7 +29,7 @@ $url_asms = $url_liam."ASMS";
 $url_tems = $url_liam."TEMS";
 
 $filepath	   	= dirname($_SERVER['SCRIPT_FILENAME'])."/";
-$filepath_liam 	= "/home/amade/www/";
+$filepath_liam 	= "fill_in_LIAM_base_path_here";
 $filepath_ipms 	= $filepath_liam."/IPMS";
 $filepath_sqms 	= $filepath_liam."/SQMS";
 $filepath_edums = $filepath_liam."/EduMS";
