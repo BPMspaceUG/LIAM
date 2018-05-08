@@ -24,6 +24,7 @@ ASMS/
 COMS/
 TEMS/
 /reporter/PHPMailReporter
+_path_url.inc.php
 # DONT upload passwords
 DB_config/login_credentials_DB_*
 DB_config/login_credentials_API_*
