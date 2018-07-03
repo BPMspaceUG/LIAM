@@ -11,6 +11,11 @@
   define("DB_HOST", "localhost:3306");
   define("DB_NAME", "bpmspace_coms_v1_A");
 
+  // Moodle Login
+  define("DB_USER_MOODLE", "bpmspace_coms_mo");
+  define("DB_PASS_MOODLE", "");
+  define("DB_HOST_MOODLE", "localhost:3306");
+  define("DB_NAME_MOODLE", "moodle");
 // COMS_PATH
 
   define("COMS_PATH", "");
